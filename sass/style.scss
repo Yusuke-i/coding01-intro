@@ -1,3 +1,168 @@
 @use "./base/base";
 @use "./base/reset";
 @use "./global" as *;
+
+//ヘッダー
+.header {
+    position:fixed;
+    z-index:1000;
+    top:0;
+    left:0;
+    width: 100;
+    height:74px;
+    background-color: $beige;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    padding: 0 120px;
+}
+
+.header__name {
+    font-size: 26px;
+    font-weight: $medium;
+    display: flex;
+    align-items: center;
+    margin-right:auto;
+    color:$green;
+}
+
+.header__nav {
+
+}
+
+.header__items {
+    display: flex;
+    align-items: center;
+}
+
+.header__item {
+
+}
+
+.header__link {
+
+}
+
+.md-none {
+
+}
+
+
+.header__contact {
+
+}
+
+.contact-button {
+
+}
+
+
+//共通パーツ
+.inner {
+    width: 100%;
+    max-width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 25px;
+    padding-left: 25px;
+    @include mq("md"){
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.heading {
+    position:relative;
+    font-size: 36px;
+    font-weight: medium;
+    padding-bottom: 17px;
+    letter-spacing: 0.05em;
+    color:$green;
+}
+
+.heading.heading--center {
+    text-align: center;
+    @include mq("md"){
+        text-align: left;
+    }
+}
+
+.heading.heading--center::after {
+    content:"";
+    left: 50%;
+    transform:translateX(-50%);
+
+    @include mq("md") {
+        left:0;
+        transform:translateX(0);
+    }
+}
+
+.heading::after{
+    content : "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 34;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $green;
+}
+.text {
+    font-size: 16px;
+    letter-spacing: 0.05em; //j
+    font-weight: $medium;
+    line-height: 1.875;     //
+    color: $green;
+}
+
+.text--large {
+    font-size: 24px;
+    line-height: 1.833;
+    @include mq("md"){
+        font-size: 20px;
+    }
+}
+
+.contact-button {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    padding: 15px;
+    transition:background-color 0.3s;
+    letter-spacing: 0.05em;
+    color: $white;
+    border-radius: 4px;
+    background-color: $green;
+    &:hover {
+        opacity: 1;
+        background-color: $green2;
+    }
+}
+
+.contact-button.contact-button--wide {
+font-size: 20px;
+width: 220px;
+
+@include mq("md"){
+    font-size: 16px;
+}
+}
+
+
+.md-none {
+    @include mq("md"){
+        display:none;
+    }
+}
+
+.md-show {
+    display:none;
+
+    @include mq(""){
+        display: block;
+    }
+}
