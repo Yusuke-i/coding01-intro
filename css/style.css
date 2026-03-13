@@ -316,7 +316,7 @@ select::-ms-expand {
   height: 100vh;
   background-image: url(/images/FV-bg.jpg);
   background-repeat: no-repeat;
-  background-position: 1;
+  background-position: center;
   background-size: cover;
 }
 
@@ -362,8 +362,40 @@ select::-ms-expand {
   margin-top: 30px;
 }
 
-* {
-  outline: 1px solid red;
+.service {
+  padding: 105px 0 100px;
+  background-color: #F7F7EE;
+}
+
+.service__cards {
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+  row-gap: 46px;
+}
+@media screen and (max-width: 768px) {
+  .service__cards {
+    padding: 0 12.5px;
+  }
+}
+
+.card__img {
+  aspect-ratio: 4/3;
+}
+
+.card__title {
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 1.562;
+  color: #2B3F2F;
+}
+@media screen and (max-width: 768px) {
+  .card__title {
+    margin-top: 15px;
+  }
 }
 
 .inner {
@@ -384,7 +416,7 @@ select::-ms-expand {
 .heading {
   position: relative;
   font-size: 36px;
-  font-weight: medium;
+  font-weight: 500;
   padding-bottom: 17px;
   letter-spacing: 0.05em;
   color: #2B3F2F;
